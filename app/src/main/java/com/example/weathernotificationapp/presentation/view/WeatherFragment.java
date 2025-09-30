@@ -1,4 +1,4 @@
-package com.example.weathernotificationapp.view;
+package com.example.weathernotificationapp.presentation.view;
 
 import android.os.Bundle;
 
