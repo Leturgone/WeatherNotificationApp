@@ -24,7 +24,7 @@ class WeatherRepositoryImpl(private val api: WeatherApi) : WeatherRepository{
             val result = api.getWeather(city).convert()
             Result.success(result)
         }catch (e: Exception){
-            Log.e("getWeathe", e.toString())
+            Log.e("getWeather", e.toString())
             Result.failure(e)
         }
     }
