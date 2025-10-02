@@ -6,5 +6,5 @@ import com.example.weathernotificationapp.domain.repository.WeatherRepository
 class GetWeatherUseCase(
     private val weatherRepository: WeatherRepository
 ) {
-    suspend fun  invoke(city: String): Weather = weatherRepository.getWeather(city)
+    suspend fun  invoke(city: String): Result<Weather> = weatherRepository.getWeather(city)
 }
