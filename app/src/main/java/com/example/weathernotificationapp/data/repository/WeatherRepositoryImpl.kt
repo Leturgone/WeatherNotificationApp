@@ -5,7 +5,6 @@ import com.example.example.WeatherResponse
 import com.example.weathernotificationapp.data.api.WeatherApi
 import com.example.weathernotificationapp.domain.model.Weather
 import com.example.weathernotificationapp.domain.repository.WeatherRepository
-import kotlinx.coroutines.runBlocking
 import kotlin.math.roundToInt
 
 class WeatherRepositoryImpl(private val api: WeatherApi) : WeatherRepository{
@@ -28,6 +27,5 @@ class WeatherRepositoryImpl(private val api: WeatherApi) : WeatherRepository{
             Result.failure(e)
         }
     }
-
 
 }
