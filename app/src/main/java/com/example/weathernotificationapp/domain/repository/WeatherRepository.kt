@@ -1,9 +1,7 @@
-package com.example.weathernotificationapp.domain.repository;
+package com.example.weathernotificationapp.domain.repository
 
-import com.example.weathernotificationapp.domain.model.Weather;
+import com.example.weathernotificationapp.domain.model.Weather
 
-import org.jetbrains.annotations.NotNull;
-
-public interface WeatherRepository {
-    @NotNull Weather getWeather(String city);
+interface WeatherRepository {
+    suspend fun getWeather(city: String): Weather
 }
