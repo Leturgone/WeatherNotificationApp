@@ -5,9 +5,10 @@ import com.example.example.WeatherResponse
 import com.example.weathernotificationapp.data.api.WeatherApi
 import com.example.weathernotificationapp.domain.model.Weather
 import com.example.weathernotificationapp.domain.repository.WeatherRepository
+import javax.inject.Inject
 import kotlin.math.roundToInt
 
-class WeatherRepositoryImpl(private val api: WeatherApi) : WeatherRepository{
+class WeatherRepositoryImpl @Inject constructor(private val api: WeatherApi) : WeatherRepository{
 
     private fun WeatherResponse.convert(): Weather{
         return Weather(
