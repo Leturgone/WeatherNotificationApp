@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -47,5 +48,19 @@ dependencies {
 
     implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:5.1.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.2.1")
+
+    implementation("com.google.dagger:dagger:2.57.2")
+    kapt("com.google.dagger:dagger-compiler:2.57.2")
+
+
+}
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+kapt {
+    generateStubs = true
 }
