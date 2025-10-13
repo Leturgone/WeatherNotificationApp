@@ -13,6 +13,7 @@ import dagger.Module;
 import dagger.Provides;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -43,8 +44,14 @@ public class ApiModule {
     @Provides
     @Singleton
     OkHttpClient provideOkhttpClient(Cache cache) {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.HEADERS);
+
         OkHttpClient.Builder client = new OkHttpClient.Builder();
+
         client.cache(cache);
+        client.addInterceptor(logging);
+
         return client.build();
     }
 
