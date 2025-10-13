@@ -7,7 +7,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-class UseCaseModule {
+public class UseCaseModule {
 
     @Provides
     GetWeatherUseCase provideGetWeatherUseCase(WeatherRepository weatherRepository) {
