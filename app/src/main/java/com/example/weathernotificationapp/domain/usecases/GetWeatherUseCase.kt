@@ -7,5 +7,5 @@ import javax.inject.Inject
 class GetWeatherUseCase @Inject constructor(
     private val weatherRepository: WeatherRepository
 ) {
-    suspend fun  invoke(city: String): Result<Weather> = weatherRepository.getWeather(city)
+    suspend operator fun  invoke(city: String): Result<Weather> = weatherRepository.getWeather(city)
 }
