@@ -1,4 +1,4 @@
-package com.example.weathernotificationapp.presentation.view;
+package com.example.weathernotificationapp.presentation.view.fragments;
 
 import android.os.Bundle;
 
